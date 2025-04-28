@@ -1,1 +1,22 @@
+console.log("Try programiz.pro");
 
+
+let user = {};
+let user1 = {};
+
+user.name = "John";
+console.log("Username: " + user.name);
+user.surname = "Smith";
+console.log("Surname: " + user.surname);
+delete user.name;
+console.log("Username:  " + user.name);
+function isEmpty(object) {
+    const isEmpty = Object.keys(object).length;
+    if (isEmpty === 0) {
+        return false
+    }
+    return true;
+}
+
+console.log("isEmpty: " + isEmpty(user));
+console.log("isEmpty: " + isEmpty(user1));
