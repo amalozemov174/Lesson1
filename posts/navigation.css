@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, ul, li{
-
     margin: 0;
     padding: 0;
     border: 0;
@@ -16,10 +15,10 @@ body {
     justify-content: center;
 }
 .navbar {
-    background-color: #f4f4f4;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    background-color: #eee;
+    display: flex;
+    justify-content: space-around;;
+    align-items: center;
 }
 header .logo {
     font-size: 24px;
@@ -30,11 +29,8 @@ header .logo {
     display: block;
 }
 .nav-links {
-    background-color: #eee;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-        display: flex;
-        list-style: none;
+    display: flex;
+    list-style: none;
 }
 .nav-links li {
     list-style: none;
@@ -66,8 +62,8 @@ header .logo {
 }
 
 .main-content {
-    padding: 2rem;
-    max-width: 1200px;
+    padding: 6rem;
+    max-width: 1600px;
     margin: 0 auto;
     min-height: 70vh;
 }
