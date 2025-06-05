@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт с навигацией</title>
+    <link rel="stylesheet" href="comments.css">
+    <script src="comments.js"></script>
+</head>
+<body>
+<header>
+/*https://naikom.ru/blog/archives/4444*/
+    <nav class="navbar">
+        <div class="logo">
+            <a>
+                <img src="C:\Users\user\Desktop\Lesson1-js2\posts\images\WL.png">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a>Проекты</a></li>
+            <li><a>Образовательные программы</a></li>
+            <li><a>Методы</a></li>
+            <li><a>Команда</a></li>
+            <li><a>Контакты</a></li>
+            <li><a><img src="C:\Users\user\Desktop\Lesson1-js2\posts\images\F.png" alt="F"></a></li>
+            <li><a><img src="C:\Users\user\Desktop\Lesson1-js2\posts\images\V.png" alt="V"></a></li>
+            <li><a>EN</a></li>
+            <li><a>RU</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main-content">
+    <section id="news">
+        <div class="container">
+            <a href="https://placehold.in/400x300">
+                <img src="C:\Users\user\Desktop\Lesson1-js2\posts\images\400x300.png" alt="Изображение 300x400">
+            </a>
+            <p class="title">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <p class="description">
+                Ante taciti nulla sit libero orci sed nam. Sagittis suspendisse gravida ornare iaculis cras nullam varius ac ullamcorper. Nunc euismod hendrerit netus ligula aptent potenti. Aliquam volutpat nibh scelerisque at. Ipsum molestie phasellus euismod sagittis mauris, erat ut. Gravida morbi, sagittis blandit quis ipsum mi mus semper dictum amet himenaeos. Accumsan non congue praesent interdum habitasse turpis orci. Ante curabitur porttitor ullamcorper sagittis sem donec, inceptos cubilia venenatis ac. Augue fringilla sodales in ullamcorper enim curae; rutrum hac in sociis! Scelerisque integer varius et euismod aenean nulla. Quam habitasse risus nullam enim. Ultrices etiam viverra mattis aliquam? Consectetur velit vel volutpat eget curae;. Volutpat class mus elementum pulvinar! Nisi tincidunt volutpat consectetur. Primis morbi pulvinar est montes diam himenaeos duis elit est orci. Taciti sociis aptent venenatis dui malesuada dui justo faucibus primis consequat volutpat. Rhoncus ante purus eros nibh, id et hendrerit pellentesque scelerisque vehicula sollicitudin quam. Hac class vitae natoque tortor do
+            </p>
+            <a href="https://placehold.in/400x300">
+                <p>Коментарии</p>
+            </a>
+        </div>
+        <div class="comments-area">
+            <header class="comments-header">
+            </header>
+            <ol class="comments-list">
+            </ol>
+        </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>О нас</h3>
+            <p>Мы создаем крутые сайты с современным дизайном.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Контакты</h3>
+            <p>📧 example@mail.com</p>
+            <p>📞 +7 (123) 456-7890</p>
+        </div>
+        <div class="footer-section">
+            <h3>Соцсети</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="VKontakte">VK</a>
+                <a href="#" aria-label="Telegram">TG</a>
+                <a href="#" aria-label="GitHub">Git</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 МойСайт. Все права защищены.</p>
+    </div>
+</footer>
+</body>
+</html>
