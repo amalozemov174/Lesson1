@@ -79,24 +79,41 @@ class LinkedList:
                 newNode.next = tmp
             node = node.next    
         return None # здесь будет ваш код
-    
-n1 = Node(1)
-n2 = Node(2)    
-n3 = Node(3)    
-n4 = Node(4)    
-n5 = Node(5)
-n55 = Node(5)
-ll = LinkedList()
-#ll.print_all_nodes()
-ll.add_in_tail(n1)
-ll.add_in_tail(n2)
-ll.add_in_tail(n3)
-ll.add_in_tail(n4)
-ll.add_in_tail(n5)
-ll.insert(None, n55)
-# ll.delete(3)
-# ll.delete(5,all=True)
-# #ll.clean()
-# print(ll.len())
-ll.print_all_nodes()
-#print(ll.find_all(5))
+
+#1.8. Напишите функцию, которая получает на вход два 
+#связанных списка, состоящие из целых значений, и если их длины равны, 
+#возвращает список, каждый элемент которого равен сумме 
+#соответствующих элементов входных списков. 
+def sumItems(linkedList1, linkedList2):
+    res = []
+    node1 = linkedList1.head
+    node2 = linkedList2.head
+    if linkedList1.len() != linkedList2:
+        return res
+    while node1,node2  is not None:
+        res.append(node1.val + node2.val)
+    return res    
+   
+n11 = Node(1)
+n12 = Node(2)    
+n13 = Node(3)    
+n14 = Node(4)    
+n15 = Node(5)
+n21 = Node(1)
+n22 = Node(2)    
+n23 = Node(3)    
+n24 = Node(4)    
+n25 = Node(5)
+ll1 = LinkedList()
+ll2 = LinkedList()
+ll1.add_in_tail(n11)
+ll1.add_in_tail(n12)
+ll1.add_in_tail(n13)
+ll1.add_in_tail(n14)
+ll1.add_in_tail(n15)
+ll2.add_in_tail(n21)
+ll2.add_in_tail(n22)
+ll2.add_in_tail(n23)
+ll2.add_in_tail(n24)
+ll2.add_in_tail(n25)
+print(sumItems(ll1,ll2))
