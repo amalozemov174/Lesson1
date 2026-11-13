@@ -84,13 +84,21 @@ class LinkedList:
     def insert(self, afterNode, newNode):
         node = self.head
         if afterNode == None:
-            newNode.next = self.head
-            self.head = newNode
+            if self.tail is None and self.head is None:
+                self.head = newNode
+                self.tail = newNode
+            else:    
+                newNode.next = self.head
+                self.head = newNode
+            return None        
         while node is not None:
             if node == afterNode:
                 tmp = node.next 
                 node.next = newNode
                 newNode.next = tmp
+                if node == self.tail:
+                    self.tail = newNode
+                return None    
             node = node.next    
         return None # здесь будет ваш код
 
