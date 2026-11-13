@@ -30,7 +30,8 @@ class LinkedList:
                 return node
             node = node.next
         return None
-
+        
+#1.4. Добавьте в класс LinkedList метод поиска всех узлов по конкретному значению
     def find_all(self, val):
         res = []
         node = self.head
@@ -40,6 +41,8 @@ class LinkedList:
             node = node.next
         return res # здесь будет ваш код+++
 
+#1.1. Добавьте в класс LinkedList метод удаления одного узла по его значению
+#где флажок all=False по умолчанию -- удаляем только первый нашедшийся элемент.
     def delete(self, val, all=False):
         node = self.head
         prev_node = None
@@ -53,12 +56,12 @@ class LinkedList:
                 prev_node = node       
                 node = node.next            
         return None # здесь будет ваш код+++
-
+#1.3. Добавьте в класс LinkedList метод очистки всего содержимого
     def clean(self):
         self.head = None
         self.tail = None
         #pass # здесь будет ваш код+++
-
+#1.5. Добавьте в класс LinkedList метод вычисления текущей длины списка
     def len(self):
         res = 0
         node = self.head
@@ -66,7 +69,8 @@ class LinkedList:
             res += 1
             node = node.next
         return res # здесь будет ваш код+++
-
+        
+#1.6. Добавьте в класс LinkedList метод вставки узла newNode после заданного узла afterNode
     def insert(self, afterNode, newNode):
         node = self.head
         if afterNode == None:
@@ -88,10 +92,12 @@ def sumItems(linkedList1, linkedList2):
     res = []
     node1 = linkedList1.head
     node2 = linkedList2.head
-    if linkedList1.len() != linkedList2:
+    if linkedList1.len() != linkedList2.len():
         return res
-    while node1,node2  is not None:
-        res.append(node1.val + node2.val)
+    while node1 is not None and node2 is not None:
+        res.append(node1.value + node2.value)
+        node1 = node1.next    
+        node2 = node2.next    
     return res    
    
 n11 = Node(1)
@@ -99,21 +105,12 @@ n12 = Node(2)
 n13 = Node(3)    
 n14 = Node(4)    
 n15 = Node(5)
-n21 = Node(1)
-n22 = Node(2)    
-n23 = Node(3)    
-n24 = Node(4)    
-n25 = Node(5)
 ll1 = LinkedList()
-ll2 = LinkedList()
 ll1.add_in_tail(n11)
 ll1.add_in_tail(n12)
 ll1.add_in_tail(n13)
 ll1.add_in_tail(n14)
 ll1.add_in_tail(n15)
-ll2.add_in_tail(n21)
-ll2.add_in_tail(n22)
-ll2.add_in_tail(n23)
-ll2.add_in_tail(n24)
-ll2.add_in_tail(n25)
-print(sumItems(ll1,ll2))
+ll1.delete(1)
+ll1.print_all_nodes()
+
