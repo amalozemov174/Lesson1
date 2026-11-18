@@ -41,18 +41,27 @@ class LinkedList2:
         prev_node = None
         while node is not None:
             if node.value == val:
-                if prev_node == None:
+                if node.prev == None:
                     if node.next == None:
                         self.tail = None
                     self.head = node.next                    
                     node = node.next
+                    node.prev.next = None
+                    node.prev = None
                 elif node.next == None:    
-                    prev_node.next = None
-                    self.tail = prev_node
+                    node.prev.next = None
+                    self.tail = node.prev
+                    tmp = node
                     node = node.next
+                    tmp.prev = None
+                    tmp.next = None
                 else:
-                    prev_node.next = node.next
-                    node = prev_node.next
+                    tmp = node
+                    node.prev.next = node.next
+                    node.next.prev = node.prev
+                    node = node.next
+                    tmp.prev = None
+                    tmp.next = None
                 if all != True:
                    return None
             else:       
@@ -76,9 +85,13 @@ class LinkedList2:
         pass # здесь будет ваш код
 
     def add_in_head(self, newNode):
-        if newNode != None
-            tmp = self.head
-            self.head = newNode
-            newNode.prev = None
-            newNode.next = tmp
-            tmp.prev = newNode            
+        if newNode != None:
+            if self.head != None:
+                tmp = self.head
+                self.head = newNode
+                newNode.prev = None
+                newNode.next = tmp
+                tmp.prev = newNode
+            else:
+                self.head = newNode
+                self.tail = newNode            
