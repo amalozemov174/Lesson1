@@ -44,10 +44,10 @@ class LinkedList2:
                 if node.prev == None:
                     if node.next == None:
                         self.tail = None
+                    else:
+                        node.next.prev = None    
                     self.head = node.next                    
                     node = node.next
-                    node.prev.next = None
-                    node.prev = None
                 elif node.next == None:    
                     node.prev.next = None
                     self.tail = node.prev
