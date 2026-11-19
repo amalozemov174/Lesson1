@@ -22,3 +22,19 @@ def reverse_linked_list(linkedList):
                     node.next = None
                     node = node_next
                     linkedList.tail = tmp
+
+def has_cycle(self):
+    visited = {}
+    node = self.head
+    while node is not None:
+        if node in visited:
+            return True
+        visited[node] = True
+        node = node.next
+    visited = {}
+    node = self.tail
+    while node is not None:
+        if node in visited:
+            return True
+        visited[node] = True
+        node = node.prev
