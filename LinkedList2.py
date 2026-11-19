@@ -82,7 +82,31 @@ class LinkedList2:
         return res
 
     def insert(self, afterNode, newNode):
-        pass # здесь будет ваш код
+        node = self.head
+        if newNode == None:
+            self.tail = afterNode
+            afterNode.next = None
+            return None
+        if afterNode == None:
+            if self.tail is None and self.head is None:
+                self.head = newNode
+                self.tail = newNode
+            else:    
+                newNode.next = self.head
+                self.head = newNode
+            return None        
+        while node is not None:
+            if node == afterNode:
+                tmp = node.next 
+                node.next = newNode
+                newNode.next = tmp
+                newNode.prev = node
+                tmp.prev = newNode
+                if node == self.tail:
+                    self.tail = newNode
+                return None    
+            node = node.next    
+        return None
 
     def add_in_head(self, newNode):
         if newNode != None:
