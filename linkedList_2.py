@@ -51,3 +51,27 @@ def sort(linkedList):
                     node.value = tmp
                 node1 = node1.next
             node = node.next  
+
+def merge(linkedList1, linkedList2):
+    res = LinkedList2()
+    sort(linkedList1)
+    sort(linkedList2)
+    node1 = linkedList1.head
+    node2 = linkedList2.head
+    while node1 is not None and node2 is not None:
+        if node1.value > node2.value:
+            res.add_in_tail(Node(node2.value))
+            node2 = node2.next
+        else:
+            res.add_in_tail(Node(node1.value))
+            node1 = node1.next
+    if node1 is None:
+        while node2 is not None:
+            res.add_in_tail(Node(node2.value))    
+            node2 = node2.next    
+    else:
+        while node1 is not None:
+            res.add_in_tail(Node(node1.value))    
+            node1 = node1.next
+    return res 
+
