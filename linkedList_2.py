@@ -38,3 +38,16 @@ def has_cycle(self):
             return True
         visited[node] = True
         node = node.prev
+
+def sort(linkedList):
+    if linkedList.len() > 1:    
+        node = linkedList.head
+        while node is not None:            
+            node1 = node.next
+            while node1 is not None:
+                if node.value >  node1.value:
+                    tmp = node1.value
+                    node1.value = node.value     
+                    node.value = tmp
+                node1 = node1.next
+            node = node.next  
