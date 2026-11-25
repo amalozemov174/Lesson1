@@ -47,7 +47,7 @@ class DynArray:
         self.array[i] = itm
 
     def delete(self, i):
-        if i < 0 or i > self.count:
+        if i < 0 or i >= self.count:
             raise IndexError('Index is out of bounds')
         tmp_next = self.array[self.count - 1]
         for index in range(self.count - 2, i - 1, -1):
@@ -55,16 +55,12 @@ class DynArray:
             self.array[index] = tmp_next
             tmp_next = t1
         self.count -= 1
-        if self.count <= self.capacity * 1.618:
-            self.resize(1.618*self.capacity)
-        
-    def print_all(self):
-        for index in range(self.count - 1):
-             print(self.array[index])
-        
-    def print_all(self):
-        for index in range(self.count - 1):
-             print(self.array[index])
+        if self.count <= self.capacity * 0.5 and self.capacity > 16:
+            size = int(self.capacity / 1.5)
+            if size > 16:
+                self.resize(size)
+            else:
+                self.resize(16)
              
 da = DynArray()
 da.append(1)
