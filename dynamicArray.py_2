@@ -68,3 +68,85 @@ class DynArray:
                 self.resize(16)
         self.coins += 1
         self.count -= 1
+
+
+
+##########################################################
+
+import ctypes
+
+class DynArray:
+    
+    def __init__(self, level, size):
+        self.count = 0
+        self.size = size
+        self.capacity = 16
+        self.level = level
+        if self.level > 1:
+            self.array = self.make_array(self.capacity)
+            for i in range(self.size[0]):
+                 self.append(DynArray(self.level - 1, self.size[1:]))
+        else:
+            self.array = self.make_array(self.capacity)
+            for i in range(self.size[0]):
+                self.append(None)
+
+    def __len__(self):
+        return self.count
+
+    def make_array(self, new_capacity):
+        return (new_capacity * ctypes.py_object)()
+
+    def __getitem__(self,i):
+        if len(i) != self.level:
+            raise IndexError('Indexes is out of bounds')
+        current = self
+        for i in range(len(i) - 1):
+            idx = indices[i]
+            if idx < 0 or idx >= current.count:
+                raise IndexError('Index is out of bounds')
+            current = current.array[idx]
+
+
+   def __getitem__(self, i):
+        if len(indices) != self.level:
+            raise IndexError('Invalid number of dimensions')
+
+        current = self
+        # Идём по позициям от 0 до предпоследней включительно
+        for i in range(len(indices) - 1):
+            idx = indices[i]
+            if idx < 0 or idx >= current.count:
+                raise IndexError('Index is out of bounds')
+            current = current.array[idx]
+
+        # Берём последний индекс
+        last_idx = indices[len(indices) - 1]
+        if last_idx < 0 or last_idx >= current.count:
+            raise IndexError('Index is out of bounds')
+
+        return current.array[last_idx]
+
+        # Берём последний индекс
+        last_idx = indices[len(indices) - 1]
+        if last_idx < 0 or last_idx >= current.count:
+            raise IndexError('Index is out of bounds')
+        
+        if i < 0 or i >= self.count:
+            raise IndexError('Index is out of bounds')
+        return self.array[i]
+
+    def resize(self, new_capacity):
+        new_array = self.make_array(new_capacity)
+        for i in range(self.count):
+            new_array[i] = self.array[i]
+        self.array = new_array
+        self.capacity = new_capacity
+
+    def append(self, itm):
+        if self.count == self.capacity:
+            self.resize(2*self.capacity)
+        self.array[self.count] = itm
+        self.count += 1
+
+
